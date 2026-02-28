@@ -44,6 +44,6 @@
         "units": "Meter"
     },
     "url": "github repo here",
-    "manifest": "github repo here/system.json",
+    "manifest": "https://raw.githubusercontent.com/mimicast/V-V/main/system.json",
     "download": "github repo here/archive/vnv.zip"
 }
