@@ -1,0 +1,238 @@
+{
+  "Actor": {
+    "types": [
+        "character", 
+        "npc"
+    ],
+    "templates": {
+      "base": {
+        "name": "New Player Character",
+        "description": "",
+        "attributes": {
+          "health": {
+            "value": 10,
+            "description": "Current health points: 5 + 1d6 + Guts"
+          },
+          "exertion": {
+            "value": 0,
+            "max": 3
+          },
+          "refactoryPeriod": {
+            "value": "00:00",
+            "min": "00:30",
+            "max": "01:45",
+            "type": "time",
+            "description": "Recovery timer in hh:mm format"
+          },
+          "characterState": {
+            "value": "alive",
+            "options": [
+              "alive",              
+              "incapacitated",
+              "dead",
+              "ghost",
+              "zombie"
+            ]
+          }
+        },
+        "abilities": {
+          "smarts": {
+            "value": -4,
+            "label": "Smarts"
+          },
+          "brawns": {
+            "value": -4,
+            "label": "Brawns"
+          },
+          "guts": {
+            "value": -4,
+            "label": "Guts"
+          },
+          "charm": {
+            "value": -4,
+            "label": "Charm"
+          }
+        },
+        "details": {
+          "level": 0,
+          "age": 0,
+          "kin": {
+              "value": "human",
+              "options": [
+                  "human",
+                  "goblin",
+                  "elf",
+                  "dwarf",
+                  "orc",
+                  "dragonkin",
+                  "centaur",
+                  "satyr",
+                  "relmer",
+                  "alloyan",
+                  "dweller",
+                  "otherling"
+              ]
+          },
+          "jade": 0
+        }
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "background": "",
+      "personality": ""
+    },
+    "npc": {
+      "templates": ["base"],
+      "challenge": 0,
+      "loot": ""
+    }
+  },
+  "Item": {
+    "types": [
+        "weapon", 
+        "armor", 
+        "magic", 
+        "martialSkill",
+        "trinket"
+    ],
+    "materials": [
+        "wood",
+        "stone",
+        "bronze",
+        "iron",
+        "steel",
+        "glass"
+    ],
+    "weaponType": [
+        "basic",
+        "advanced"
+    ],
+    "weaponDamageDice": [
+        "1d4",
+        "1d6",
+        "1d8",
+        "1d10",
+        "1d12",
+        "2d6",
+        "2d8",
+        "2d10",
+        "2d12"
+    ],
+    "weaponRange": [
+        "melee",
+        "ranged"
+    ],
+    "weaponHandling": [
+        "one-handed",
+        "two-handed"
+    ],
+    "armorType": [
+        "skimpy",
+        "light",
+        "medium",
+        "full",
+        "fitted"
+    ],
+    "armorUpgrade": [
+        "none",
+        "+1",
+        "+2",
+        "+3"
+    ],
+    "armorDefense": [
+        "1d2",
+        "1d4",
+        "1d6",
+        "1d8",
+        "2d6"
+    ],
+    "templates": {
+      "generalItems": {
+        "name": "",
+        "description": "",
+        "quantity": 1,
+        "price": 0
+      },
+      "generalArmors": {
+        "name": "",
+        "description": "",
+        "quantity": 1,
+        "price": 0
+      },
+      "generalMagic": {
+        "name": "",
+        "description": "",
+        "motes": 0,
+        "ability": "smarts",
+        "diceChallenge": "12",
+        "price": 150
+      },
+      "generalMartialSkills": {
+        "name": "",
+        "description": "",
+        "ability": [
+            "brawns",
+            "guts",
+            "charm"
+        ],
+        "diceChallenge": "12",
+        "price": 150
+      }
+    },
+    "weapon": {
+      "templates": ["generalItems"],
+      "damage": {
+        "dice": "1d6",
+        "type": "basic",
+        "handling": [
+          "one-handed",
+          "two-handed"
+        ],        
+        "material": "iron"
+      },
+      "range": [
+        "melee",
+        "ranged"
+      ],
+      "equipped": false
+    },
+    "improvisedWeapon": {
+      "templates": ["generalItems"],
+      "damage": {
+        "dice": "1d4",
+        "type": "improvised",
+        "handling": "one-handed",
+        "material": "wood",
+        "durability": 1
+      },
+      "range": "melee",
+      "equipped": false
+    },
+    "armor": {
+      "templates": ["generalArmors"],
+      "defense": "1d2",
+      "upgrade": "none",
+      "type": "skimpy",
+      "equipped": false
+    },
+    "magic": {
+      "templates": ["generalMagic"],
+        "type": [
+          "basic",
+          "advanced"
+        ],
+      "duration": 0,
+      "diceResult": "1d2"
+    },
+    "martialSkill": {
+      "templates": ["generalMartialSkills"],
+      "type": "general"
+    },
+    "trinket" : {
+      "name": "",
+      "description": "",
+      "trinketId": ""
+    }
+  }
+}

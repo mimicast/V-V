@@ -1,0 +1,49 @@
+{
+    "id": "vnv",
+    "title": "Vice and Violence - Version 2.0",
+    "description": "The core system for the Vice & Violence game by Rapscallion.",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Rapscallion",
+            "url": "https://www.patreon.com/c/rapscallionvns/"
+        },
+        {
+            "name": "Sereia Altair",
+            "url": "https://www.patreon.com/sereiaaltair",
+            "discord": "sereiaaltair"
+        }
+    ],
+    "compatibility": {
+        "minimum": 13,
+        "verified": "13.342",
+        "maximum": 13
+    },
+    "esmodules": [
+        "vnv.js"
+    ],
+    "styles": [
+        "less/vnv.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "es",
+            "name": "Spanish",
+            "path": "lang/es.json"
+        }
+    ],
+    "socket": false,
+    "grid": {
+        "type": "square",
+        "distance": 1,
+        "units": "Meter"
+    },
+    "url": "github repo here",
+    "manifest": "github repo here/system.json",
+    "download": "github repo here/archive/vnv.zip"
+}
