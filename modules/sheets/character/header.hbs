@@ -1,18 +1,18 @@
 <div class="headerBox">
     <div class="logoBox">
-        <div class="logoImg"><div class="logoText">Vice &amp; Violence</div></div>
+        <div class="logoImg"><div class="logoText">{{localize "VNV.System.Name"}}</div></div>
     </div>
 
     <div class="charInfoBox">
         <input class="bitInputText" type="text" name="name" value="{{actor.name}}" placeholder="Character Name">
         <div class="lvlBox">
-            <div class="lvlLabel">Level</div>
-            <div class="lvlValue">12</div>
+            <div class="lvlLabel">{{localize "VNV.System.LevelShort"}}</div>
+            <div class="lvlValue">{{system.experience.level}}</div>
         </div>
         <div class="charClass">
-            <div class="charCompetence">
-                <div class="traiticon fa-regular fa-circle-dot"></div>Beginner
-            </div>
+            <div class="traiticon fa-regular fa-circle-dot"></div>
+            {{localize (concat "VNV.System." system.experience.class "")}}
+            
         </div>
     </div>
 </div>

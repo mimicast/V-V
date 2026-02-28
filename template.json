@@ -35,6 +35,10 @@
             ]
           }
         },
+        "experience": {
+          "level": 0,
+          "class":"lvlComp1"
+        },
         "abilities": {
           "smarts": {
             "value": -4,
@@ -54,7 +58,6 @@
           }
         },
         "details": {
-          "level": 0,
           "age": 0,
           "kin": {
               "value": "human",
