@@ -5,7 +5,8 @@
 
 // ==================== IMPORTS ====================
 import { VNV } from "./modules/config.js";
-import * as utils from "./modules/utils.js";
+import vnvActor from "./modules/objects/vnvActor.js";
+import vnvCharacterSheet from "./modules/sheets/vnvCharacterSheet.js";
 import * as dice from "./modules/dice.js";
 import * as dialog from "./modules/dialog.js";
 
@@ -20,10 +21,14 @@ Hooks.once("init", async () => {
     // Register the system configuration object globally
     CONFIG.VNV = VNV;
     CONFIG.INIT = true;
+    CONFIG.Actor.documentClass = vnvActor;
 
     // Register custom sheets and unregister the start sheets
     // Items.unregisterSheet("core", ItemSheet);
-    // Actors.unregisterSheet("core", ActorSheet);
+    
+    const DocumentSheetConfig = foundry.applications.sheets.DocumentSheetConfig;
+    DocumentSheetConfig.unregisterSheet(Actor, "core", foundry.appv1.sheets.ActorSheet);
+    DocumentSheetConfig.registerSheet(Actor, "vnv", vnvCharacterSheet, { types: ["character"], makeDefault: true, label: "VNV.SheetClassCharacter" });
 
     // Load all Handlebars templates used in the system
     preloadHandlebarsTemplates();
@@ -61,20 +66,23 @@ async function preloadHandlebarsTemplates() {
     // Define the template paths to preload
     const templatePaths = [
         // Character sheet templates
-        "systems/vnv/templates/sheets/character-sheet.html",
-        "systems/vnv/templates/sheets/npc-sheet.html",
+        "systems/vnv/templates/partials/character-sheet-character.hbs",
+        "systems/vnv/templates/partials/character-sheet-background.hbs",
+        "systems/vnv/templates/partials/character-sheet-skills.hbs",
+        "systems/vnv/templates/partials/character-sheet-combat.hbs",
+        "systems/vnv/templates/partials/character-sheet-progression.hbs",
         
         // Partial templates for common UI elements
-        "systems/vnv/templates/partials/actor-header.html",
-        "systems/vnv/templates/partials/tabs.html",
-        "systems/vnv/templates/partials/attribute-row.html",
+        // "systems/vnv/templates/partials/actor-header.hbs",
+        // "systems/vnv/templates/partials/tabs.hbs",
+        // "systems/vnv/templates/partials/attribute-row.hbs",
         
         // Chat templates
-        "systems/vnv/templates/chat/roll-result.html",
-        "systems/vnv/templates/chat/damage-roll.html",
+        // "systems/vnv/templates/chat/roll-result.hbs",
+        // "systems/vnv/templates/chat/damage-roll.hbs",
         
         // App templates
-        "systems/vnv/templates/apps/configuration-dialog.html",
+        //"systems/vnv/templates/apps/configuration-dialog.hbs",
     ];
 
     // Load all templates
