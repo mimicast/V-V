@@ -39,9 +39,9 @@
     ],
     "socket": false,
     "grid": {
-        "type": "square",
+        "type": 0,
         "distance": 1,
-        "units": "Meter"
+        "units": "m"
     },
     "url": "https://github.com/mimicast/V-V",
     "manifest": "https://raw.githubusercontent.com/mimicast/V-V/main/system.json",
