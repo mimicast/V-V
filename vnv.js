@@ -28,8 +28,8 @@ Hooks.once("init", async () => {
     
     const DocumentSheetConfig = foundry.applications.sheets.DocumentSheetConfig;
     //DocumentSheetConfig.unregisterSheet(Actor, "core", "ActorSheet");
-    DocumentSheetConfig.registerSheet(Actor, "vnv", VNVCharacterSheet, { types: ["character"], makeDefault: true, label: "VNV.SheetClassCharacter" });
-
+    //DocumentSheetConfig.registerSheet(Actor, "vnv", VNVCharacterSheet, { types: ["character"], makeDefault: true, label: "VNV.SheetClassCharacter" });
+    Actors.registerSheet("vnv", VNVCharacterSheet, { types: ["character"], makeDefault: true, label: "VNV.SheetClassCharacter" });
     // Load all Handlebars templates used in the system
     preloadHandlebarsTemplates();
     
