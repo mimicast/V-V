@@ -27,7 +27,7 @@ Hooks.once("init", async () => {
     // Items.unregisterSheet("core", ItemSheet);
     
     const DocumentSheetConfig = foundry.applications.sheets.DocumentSheetConfig;
-    DocumentSheetConfig.unregisterSheet(Actor, "core", "ActorSheet");
+    //DocumentSheetConfig.unregisterSheet(Actor, "core", "ActorSheet");
     DocumentSheetConfig.registerSheet(Actor, "vnv", VNVCharacterSheet, { types: ["character"], makeDefault: true, label: "VNV.SheetClassCharacter" });
 
     // Load all Handlebars templates used in the system
