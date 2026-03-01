@@ -44,7 +44,8 @@
             "characterState": "Character State",
             "challenge": "Challenge",
             "loot": "Loot",
-            "improvisedWeapon": "Improvised Weapon"
+            "improvisedWeapon": "Improvised Weapon",
+            "characterProgression": "Character Progression"
         }
     }
 }

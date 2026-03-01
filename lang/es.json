@@ -44,7 +44,8 @@
             "characterState": "Estado del Personaje",
             "challenge": "Desafío",
             "loot": "Botín",
-            "improvisedWeapon": "Arma Improvisada"
+            "improvisedWeapon": "Arma Improvisada",
+            "characterProgression": "Progreso del Personaje"
         }
     }
 }

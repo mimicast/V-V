@@ -6,7 +6,7 @@
 // ==================== IMPORTS ====================
 import { VNV } from "./modules/config.js";
 import vnvActor from "./modules/objects/vnvActor.js";
-import vnvCharacterSheet from "./modules/sheets/vnvCharacterSheet.js";
+import { VNVCharacterSheet } from "./modules/sheets/character-sheet.js";
 import * as dice from "./modules/dice.js";
 import * as dialog from "./modules/dialog.js";
 
@@ -28,7 +28,7 @@ Hooks.once("init", async () => {
     
     const DocumentSheetConfig = foundry.applications.sheets.DocumentSheetConfig;
     DocumentSheetConfig.unregisterSheet(Actor, "core", foundry.appv1.sheets.ActorSheet);
-    DocumentSheetConfig.registerSheet(Actor, "vnv", vnvCharacterSheet, { types: ["character"], makeDefault: true, label: "VNV.SheetClassCharacter" });
+    DocumentSheetConfig.registerSheet(Actor, "vnv", VNVCharacterSheet, { types: ["character"], makeDefault: true, label: "VNV.SheetClassCharacter" });
 
     // Load all Handlebars templates used in the system
     preloadHandlebarsTemplates();
@@ -70,7 +70,7 @@ async function preloadHandlebarsTemplates() {
         "systems/vnv/templates/partials/character-sheet-background.hbs",
         "systems/vnv/templates/partials/character-sheet-skills.hbs",
         "systems/vnv/templates/partials/character-sheet-combat.hbs",
-        "systems/vnv/templates/partials/character-sheet-progression.hbs",
+        //"systems/vnv/templates/partials/character-sheet-progression.hbs",
         
         // Partial templates for common UI elements
         // "systems/vnv/templates/partials/actor-header.hbs",
@@ -223,7 +223,7 @@ function registerDocumentClasses() {
  */
 function registerSheetClasses() {
     // TODO: Import sheet classes
-    // import { VNVCharacterSheet } from "./modules/sheets/character-sheet.js";
+    // import { VNVCharacterSheet } from "./modules/sheets/vnvCharacterSheet.js";
     // import { VNVNPCSheet } from "./modules/sheets/npc-sheet.js";
     // import { VNVItemSheet } from "./modules/sheets/item-sheet.js";
 
